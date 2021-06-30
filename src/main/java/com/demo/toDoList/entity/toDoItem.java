@@ -37,6 +37,6 @@ public class toDoItem {
     @PrePersist
     private void toCreate(){
         this.setCreatedDate(LocalDateTime.now());
-        //this.setDone(false);
+        this.setIsDone(false);
     }
 }

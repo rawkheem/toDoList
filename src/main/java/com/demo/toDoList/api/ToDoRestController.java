@@ -15,8 +15,8 @@ public class ToDoRestController {
     @Autowired
     private toDoItemService service;
 
-    @GetMapping("/{itemId}")
-    public toDoItemDto getItem(@PathVariable Long id) {
+    @GetMapping("/{id}")
+    public toDoItemDto getItem(@PathVariable("id") Long id) {
         return service.getById(id);
     }
 
@@ -31,12 +31,12 @@ public class ToDoRestController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public Boolean deleteTodoItem(@PathVariable Long id) {
+    public Boolean deleteTodoItem(@PathVariable("id") Long id) {
         return service.deleteItem(id);
     }
 
     @PutMapping("/state/{id}")
-    public toDoItemDto changeDoneState(@PathVariable Long id) {
+    public toDoItemDto changeDoneState(@PathVariable("id") Long id) {
         return service.changeDoneState(id);
     }
 }
