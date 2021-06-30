@@ -20,7 +20,8 @@ public class toDoItemMapper {
         dto.setDescription(entity.getDescription());
         dto.setCreated(entity.getCreatedDate());
         dto.setPriority(entity.getPriority());
-        dto.setIsDone(asString(entity.isDone()));
+        dto.setIsDone(entity.getIsDone());
+        //dto.setIsDone(asString(entity.isDone()));
 
         return dto;
     }
@@ -31,13 +32,13 @@ public class toDoItemMapper {
         entity.setId(dto.getId());
         entity.setDescription(dto.getDescription());
         entity.setCreatedDate(dto.getCreated());
-        entity.setPriority(dto.getPriority());
-        entity.setDone(asBoolean(dto.getIsDone()));
+        entity.setIsDone(dto.getIsDone());
+       // entity.setDone(asBoolean(dto.getIsDone()));
 
         return entity;
     }
 
-    public String asString(Boolean bool) {
+    /*public String asString(Boolean bool) {
         if (bool != null) {
             if (bool) {
                 return "Y";
@@ -54,6 +55,6 @@ public class toDoItemMapper {
             return bool.equals("Y");
         }
         return null;
-    }
+    }*/
 
 }

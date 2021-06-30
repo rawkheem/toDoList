@@ -15,9 +15,11 @@ public class toDoItemDto {
     private Long id;
     private String description;
     private String priority;
-    private String isDone;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    private Boolean isDone;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-    LocalDateTime created;
+    private LocalDateTime created;
 
 }

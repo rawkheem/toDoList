@@ -32,11 +32,11 @@ public class toDoItem {
 
     @Column(name = "done")
     @Getter
-    private boolean isDone;
+    private Boolean isDone;
 
     @PrePersist
     private void toCreate(){
         this.setCreatedDate(LocalDateTime.now());
-        this.setDone(false);
+        //this.setDone(false);
     }
 }

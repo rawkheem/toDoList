@@ -44,7 +44,7 @@ public class toDoItemServiceImpl implements toDoItemService {
                 .orElseThrow(() -> new EntityNotFoundException());
 
         if (item!=null) {
-            item.setDone(!item.isDone());
+            item.setIsDone(!item.getIsDone());
             toDoListRepository.save(item);
             return mapper.toDto(item);
         }
